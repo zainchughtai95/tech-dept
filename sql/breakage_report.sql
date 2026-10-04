@@ -6,4 +6,5 @@ CROSS JOIN customers c
 WHERE LOWER(o.status) = 'open'
   AND o.customer_id NOT IN (SELECT id FROM blocked_customers)
   AND c.email LIKE '%gmail.com'
-ORDER BY o.created_at;
+ORDER BY o.created_at
+LIMIT 100;
